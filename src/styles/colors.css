@@ -1,0 +1,73 @@
+:root {
+    --bg-color: #fff;
+    --layer-bg-color: #f0f0f0;
+    --layer-bg-color-hovered: #e5e5e5;
+    --faded-primary-color: #0071421f;
+    --faded-text: #5050502e;
+    --text-color: #172B4D;
+    --primary-color: #4f47c5;
+    --primary-color-hovered: #368866;
+    --secondary-color: #0369a1;
+    --faded-secondary-color: #036aa11f;
+    --link-color: #4f47c5;
+    --success-color: #52c41a;
+    --faded-success-color: #52c41a1f;
+    --warning-color: #faad14;
+    --faded-warning-color: #faad141f;
+    --error-color: #f5222d;
+    --faded-error-color: #f5222d1f;
+    --error-color-hovered: #ee4750;
+    --heading-color: #333;
+    --text-color-secondary: rgba(0, 0, 0, 0.45);
+    --disabled-color: rgba(0, 0, 0, 0.25);
+    --border-color-base: #d9d9d9;
+    --input-bg-color: #fcfcfc;
+    --opposite-text-color: #cfcfcf;
+    --table-even-row: var(--bg-color);
+    --table-odd-row: rgb(245, 245, 245);
+    --table-hovered-row: var(--layer-bg-color-hovered);
+    --table-error-row: rgb(252, 233, 233);
+    --scroll-thumb-color: #a0a0a0;
+    --section-bg-bolor: #f9fafb
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --faded-text: #5050502e;
+        --bg-color: #fff;
+        --text-color: #333333;
+        --body-bg: #f3f4f6;
+        --border-color-base: #d9d9d9;
+        --input-bg-color: #fcfcfc;
+        --layer-bg-color: #f0f0f0;
+        --layer-bg-color-hovered: #e5e5e5;
+        --opposite-text-color: #ffffff;
+        --text-color-secondary: rgba(0, 0, 0, 0.45);
+        --error-color: #f5222d;
+        --secondary-color: #0369a1;
+        --table-even-row: var(--bg-color);
+        --table-odd-row: rgb(245, 245, 245);
+        --table-hovered-row: var(--layer-bg-color-hovered);
+        --scroll-thumb-color: #a0a0a0;
+        --table-error-row: rgb(252, 233, 233);
+    }
+}
+
+@media print {
+    [color-scheme="dark"] {
+        --bg-color: #fff;
+        --text-color: #535353;
+        --border-color-base: #575757;
+        --table-even-row: #ffffff;
+        --table-odd-row: #ffffff;
+        --table-hovered-row: #ffffff;
+    }
+    [color-scheme="light"] {
+        --bg-color: #fff;
+        --text-color: #535353;
+        --border-color-base: #575757;
+        --table-even-row: #ffffff;
+        --table-odd-row: #ffffff;
+        --table-hovered-row: #ffffff;
+    }
+}
