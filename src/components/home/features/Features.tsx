@@ -7,11 +7,12 @@ const Features = () => {
 			animateIn="animate__fadeInUp"
 			offset={300}
 			duration={1.5}
+			animateOnce
 		>
 			<section className="w-full h-[680px] flex items-center ">
-				<div className="l-container  flex justify-between items-center w-full ">
+				<div className="flex items-center justify-between w-full l-container ">
 					<div className="">
-						<h3 className="text-4xl mb-3 font-medium">
+						<h3 className="mb-3 text-4xl font-medium">
 							سیگنال های معاملاتی
 						</h3>
 						<p className="max-w-lg">

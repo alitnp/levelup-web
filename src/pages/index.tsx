@@ -3,6 +3,8 @@ import { Inter } from "@next/font/google";
 import Header from "@/components/home/header/Header";
 import Features from "@/components/home/features/Features";
 import WhyLevelUp from "@/components/home/whyLevelUp/WhyLevelUp";
+import "react-slideshow-image/dist/styles.css";
+import Articles from "@/components/home/articles/Articles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +27,7 @@ export default function Home() {
 			<main className="overflow-hidden">
 				<Features />
 				<WhyLevelUp />
+				<Articles />
 			</main>
 		</>
 	);
