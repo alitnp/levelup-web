@@ -6,7 +6,7 @@ const Features = () => {
 		<AnimationOnScroll
 			animateIn="animate__fadeInUp"
 			offset={300}
-			duration={1.5}
+			duration={1}
 			animateOnce
 		>
 			<section className="w-full h-[680px] flex items-center ">

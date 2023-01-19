@@ -37,7 +37,7 @@ const fakeData = [
 
 const WhyLevelUp: FC = () => {
 	//states
-	const [activeIndex, setActiveIndex] = useState<number>(1);
+	const [activeIndex, setActiveIndex] = useState<number>(0);
 
 	//hooks
 	const slideRef = useRef<SlideshowRef>(null);
@@ -52,7 +52,7 @@ const WhyLevelUp: FC = () => {
 		<AnimationOnScroll
 			animateIn="animate__fadeInUp"
 			offset={150}
-			duration={2}
+			duration={1}
 			animateOnce
 		>
 			<section className="mb-6">

@@ -22,7 +22,7 @@
     --disabled-color: rgba(0, 0, 0, 0.25);
     --border-color-base: #d9d9d9;
     --input-bg-color: #fcfcfc;
-    --opposite-text-color: #cfcfcf;
+    --opposite-text-color: #ffffff;
     --table-even-row: var(--bg-color);
     --table-odd-row: rgb(245, 245, 245);
     --table-hovered-row: var(--layer-bg-color-hovered);
