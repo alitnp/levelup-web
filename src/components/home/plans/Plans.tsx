@@ -61,7 +61,7 @@ const Plans: FC<IPlans> = ({}) => {
 				<h3 className="pb-2 mb-2 text-xl font-bold border-b border-l-border-color-base">
 					بسته ها
 				</h3>
-				<div className="flex gap-x-4">
+				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
 					{falsePlans.map((plan, index) => (
 						<Plan key={index} {...plan} />
 					))}

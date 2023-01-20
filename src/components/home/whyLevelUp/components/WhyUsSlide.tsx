@@ -14,14 +14,18 @@ const WhyUsSlide: FC<IWhyUpSlide> = ({
 }) => {
 	return (
 		<article
-			className="flex items-center"
+			className="flex flex-col items-center sm:flex-row"
 			style={{ direction: "rtl" }}
 		>
-			<div className="w-1/2">
-				<h5 className="mb-1 text-3xl font-medium">{title}</h5>
-				<p className="w-[50ch]">{desc}</p>
+			<div className="sm:w-1/2">
+				<h5 className="mb-1 text-3xl font-medium text-center sm:text-right">
+					{title}
+				</h5>
+				<p className="sm:w-[50ch] text-center sm:text-right">
+					{desc}
+				</p>
 			</div>
-			<div className="w-1/2 overflow-hidden h-80">
+			<div className="px-6 my-10 overflow-hidden sm:my-0 sm:p-0 sm:w-1/2 sm:h-80">
 				<Image
 					src={imageUrl}
 					width={600}

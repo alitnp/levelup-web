@@ -56,8 +56,8 @@ const WhyLevelUp: FC = () => {
 			animateOnce
 		>
 			<section className="mb-16">
-				<div className="pt-12 pb-10 rounded-lg l-container bg-l-layer-bg-color ">
-					<div className="px-4">
+				<div className="p-10 rounded-lg l-container bg-l-layer-bg-color ">
+					<div className="px-4 pt-6 ">
 						<h3 className="text-4xl text-center">
 							چرا Level Up ؟
 						</h3>

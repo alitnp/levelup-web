@@ -6,7 +6,6 @@ import WhyLevelUp from "@/components/home/whyLevelUp/WhyLevelUp";
 import "react-slideshow-image/dist/styles.css";
 import Articles from "@/components/home/articles/Articles";
 import Plans from "@/components/home/plans/Plans";
-import Footer from "@/components/global/Footer/Footer";
 import Layout from "@/components/global/Layout/Layout";
 import Features from "@/components/home/features/Features";
 

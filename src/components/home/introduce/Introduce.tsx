@@ -12,7 +12,7 @@ const Introduce = () => {
 			duration={1}
 			animateOnce
 		>
-			<section className="w-full h-[680px] flex items-center ">
+			<section className="flex items-center w-full my-14 sm:my-20 ">
 				<div className="flex items-center justify-between w-full l-container ">
 					<div className="">
 						<h3 className="mb-4 text-4xl font-medium">
@@ -33,7 +33,7 @@ const Introduce = () => {
 							</LuButton>
 						</Link>
 					</div>
-					<div className="">
+					<div className="hidden sm:block">
 						<Image
 							src="/images/feature2.webp"
 							width={500}

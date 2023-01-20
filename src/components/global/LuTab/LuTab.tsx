@@ -20,7 +20,7 @@ const LuTab: FC<ILuTab> = ({
 }) => {
 	return (
 		<div
-			className={`flex w-full border-b border-l-border-color-base gap-x-2 ${
+			className={`flex flex-col sm:flex-row w-full border-b border-l-border-color-base gap-x-2 text-center sm:text-right ${
 				centered && "justify-center"
 			}`}
 		>
@@ -28,11 +28,11 @@ const LuTab: FC<ILuTab> = ({
 				<div
 					onClick={() => onChange(tab.key)}
 					key={index}
-					className={`${
+					className={` ${
 						activeKey === tab.key
-							? "border-b-2 border-l-primary-color"
+							? "border-b-2 border-l-primary-color bg-l-faded-primary-color sm:bg-[unset]"
 							: "hover:bg-l-faded-primary-color"
-					} px-10 cursor-pointer py-2 text-lg select-none`}
+					} px-4  sm:px-10 cursor-pointer py-2 text-lg select-none`}
 				>
 					{tab.title}
 				</div>

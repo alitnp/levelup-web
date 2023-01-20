@@ -15,7 +15,7 @@ const LuButton: FC<ILuButton> = ({
 }) => {
 	return (
 		<button
-			className={`flex justify-center min-w-[100px] items-center px-4 py-1 border rounded-md gap-x-1 border-l-border-color-base hover:border-l-primary-color ${
+			className={`flex justify-center min-w-[100px] items-center px-4 py-[6px] border rounded-md gap-x-1 border-l-border-color-base hover:border-l-primary-color ${
 				LuType === "primary" &&
 				"bg-l-secondary-color text-l-opposite-text-color"
 			} ${className}`}

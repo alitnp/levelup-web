@@ -5,13 +5,13 @@ import routes from "@/constants/routes";
 import Link from "next/link";
 import { FC } from "react";
 
-interface Ilogin {}
+interface IRegister {}
 
-const Login: FC<Ilogin> = ({}) => {
+const Register: FC<IRegister> = ({}) => {
 	return (
 		<Layout>
 			<LoginRegisterWrapper>
-				<form className="w-full max-w-md mx-auto">
+				<form className="w-3/4 mx-auto">
 					<h1 className="pb-2 mb-6 text-xl font-bold text-center border-b border-l-border-color-base">
 						ورود به حساب
 					</h1>
@@ -48,12 +48,12 @@ const Login: FC<Ilogin> = ({}) => {
 						/>
 					</div>
 					<div className="flex justify-between mt-4 gap-x-4">
-						<Link href={routes.register.path}>
+						<Link href={routes.login.path}>
 							<span className="text-xs cursor-pointer hover:text-l-primary-color">
-								ایجاد حساب کاربری
+								ورود به حساب
 							</span>
 						</Link>
-						<LuButton LuType="primary">ورود</LuButton>
+						<LuButton LuType="primary">ایجاد حساب</LuButton>
 					</div>
 				</form>
 			</LoginRegisterWrapper>
@@ -61,4 +61,4 @@ const Login: FC<Ilogin> = ({}) => {
 	);
 };
 
-export default Login;
+export default Register;

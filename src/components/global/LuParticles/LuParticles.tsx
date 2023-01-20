@@ -1,12 +1,18 @@
-import { useCallback } from "react";
+import { useCallback, FC } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-const HeaderParticles = () => {
+interface ILuParticles {
+	particlesId?: string;
+}
+
+const LuParticles: FC<ILuParticles> = ({
+	particlesId = "tsparticles",
+}) => {
 	const particlesInit = useCallback(
 		async (engine: Engine) => {
-			console.log(engine);
+			// console.log(engine);
 
 			// you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
 			// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -24,7 +30,7 @@ const HeaderParticles = () => {
 	);
 	return (
 		<Particles
-			id="tsparticles"
+			id={particlesId}
 			init={particlesInit}
 			loaded={particlesLoaded}
 			options={{
@@ -105,4 +111,4 @@ const HeaderParticles = () => {
 	);
 };
 
-export default HeaderParticles;
+export default LuParticles;

@@ -85,7 +85,7 @@ const Articles: FC = () => {
 					activeKey={activeCategoryIndex}
 					onChange={setActiveCategoryIndex}
 				/>
-				<div className="flex justify-between pt-6 gap-x-10">
+				<div className="grid justify-between grid-cols-1 gap-4 pt-6 sm:grid-cols-2 lg:flex sm:gap-10">
 					{fakeCategories[activeCategoryIndex].articles.map(
 						(article, index) => {
 							if (index > 3) return null;
@@ -102,7 +102,7 @@ const Articles: FC = () => {
 									/>
 									{index !== 3 && (
 										<div className="absolute top-0 left-0 flex flex-col items-end justify-end w-full h-full px-2 py-4 cursor-pointer bg-slate-800/60 group">
-											<p className="text-lg font-bold text-l-opposite-text-color">
+											<p className="text-lg font-bold text-center text-l-opposite-text-color md:text-right">
 												{article.title.length < 55
 													? article.title
 													: article.title.substring(0, 55) + "..."}
