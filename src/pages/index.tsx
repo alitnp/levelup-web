@@ -1,10 +1,14 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Header from "@/components/home/header/Header";
-import Features from "@/components/home/features/Features";
+import Introduce from "@/components/home/introduce/Introduce";
 import WhyLevelUp from "@/components/home/whyLevelUp/WhyLevelUp";
 import "react-slideshow-image/dist/styles.css";
 import Articles from "@/components/home/articles/Articles";
+import Plans from "@/components/home/plans/Plans";
+import Footer from "@/components/global/Footer/Footer";
+import Layout from "@/components/global/Layout/Layout";
+import Features from "@/components/home/features/Features";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,12 +27,14 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Header />
-			<main className="overflow-hidden">
-				<Features />
+			<Layout>
+				<Header />
+				<Introduce />
 				<WhyLevelUp />
 				<Articles />
-			</main>
+				<Features />
+				<Plans />
+			</Layout>
 		</>
 	);
 }

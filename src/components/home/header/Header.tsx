@@ -4,11 +4,10 @@ import React, { FC } from "react";
 
 const Header: FC = () => {
 	return (
-		<header className="relative h-[80vh] min-h-[300px]">
-			<Navbar />
+		<header className="relative h-[60vh] min-h-[300px]">
 			<HeaderParticles />
-			<div className="w-full h-full absolute text-l-opposite-text-color top-0 left-0 flex items-center justify-center text-center flex-col pt-10">
-				<h1 className="text-9xl text-center font-black ">
+			<div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full pt-10 text-center text-l-opposite-text-color">
+				<h1 className="font-black text-center text-9xl ">
 					level.UP
 				</h1>
 				<h3 className="text-xl text-center">

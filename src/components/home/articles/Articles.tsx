@@ -1,4 +1,4 @@
-import LuTab from "@/components/global/LuTab";
+import LuTab from "@/components/global/LuTab/LuTab";
 import Image from "next/image";
 import React, { FC, useState } from "react";
 import { BsArrowLeftCircle } from "react-icons/bs";

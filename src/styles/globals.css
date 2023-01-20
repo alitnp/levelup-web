@@ -56,6 +56,11 @@
     transition: color 0.5s ease, border-color 1s ease, background-color 1s ease;
 }
 
+.no-transition-effect,
+.no-transition-effect * {
+    transition: none;
+}
+
 html,
 body {
     direction: rtl;
@@ -78,7 +83,7 @@ a {
 }
 
 #tsparticles {
-    height: 80vh;
+    height: 60vh;
     min-height: 300px;
 }
 

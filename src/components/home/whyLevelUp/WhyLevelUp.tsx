@@ -1,4 +1,4 @@
-import LuTab from "@/components/global/LuTab";
+import LuTab from "@/components/global/LuTab/LuTab";
 import WhyUsSlide from "@/components/home/whyLevelUp/components/WhyUsSlide";
 import React, { FC, useState, useRef } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
@@ -55,7 +55,7 @@ const WhyLevelUp: FC = () => {
 			duration={1}
 			animateOnce
 		>
-			<section className="mb-6">
+			<section className="mb-16">
 				<div className="pt-12 pb-10 rounded-lg l-container bg-l-layer-bg-color ">
 					<div className="px-4">
 						<h3 className="text-4xl text-center">
