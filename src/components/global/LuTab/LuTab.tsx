@@ -2,13 +2,13 @@ import { FC } from "react";
 
 type tab = {
 	title: string;
-	key: number;
+	key: number | undefined;
 };
 
 interface ILuTab {
 	tabs: tab[];
-	activeKey: number;
-	onChange(a: number): void;
+	activeKey: number | undefined;
+	onChange(a: number | undefined): void;
 	centered?: boolean;
 }
 

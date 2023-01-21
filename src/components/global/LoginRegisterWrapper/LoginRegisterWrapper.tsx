@@ -11,7 +11,7 @@ const LoginRegisterWrapper: FC<ILoginRegisterWrapper> = ({
 	return (
 		<div>
 			<div className="l-container min-h-[400px] sm:h-[80vh] flex  justify-center items-center">
-				<div className="w-full mt-32 mb-20 border sm:h-[70%] flex flex-col sm:flex-row overflow-hidden rounded-lg shadow-lg border-l-border-color-base">
+				<div className="w-full  mb-20 border sm:h-[70%] flex flex-col sm:flex-row overflow-hidden rounded-lg shadow-lg border-l-border-color-base">
 					<div className="relative h-52 sm:h-full sm:w-1/2">
 						<LuParticles particlesId="tsparticles-login" />
 						<div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full text-center border text-l-opposite-text-color">

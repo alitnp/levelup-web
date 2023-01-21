@@ -18,10 +18,12 @@ const Footer: FC<IFooter> = ({}) => {
 	return (
 		<footer className="w-full py-14 bg-l-text-color text-l-opposite-text-color">
 			<div className="l-container">
-				<div>
-					<span className="text-3xl font-black">LEVEL UP</span>
+				<div className="m-0 text-center md:text-right">
+					<span className="m-0 text-3xl font-black text-center">
+						LEVEL UP
+					</span>
 				</div>
-				<div className="flex justify-between">
+				<div className="flex flex-col items-center justify-between gap-12 text-center md:items-start md:gap-2 md:text-right md:flex-row">
 					<div className="text-sm ">
 						<p className="mb-4 text-xs">
 							بستر تخصصی اشتراک گزاری سیگنال های معاملاتی‌

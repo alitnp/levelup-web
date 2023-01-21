@@ -8,17 +8,17 @@ const Introduce = () => {
 	return (
 		<AnimationOnScroll
 			animateIn="animate__fadeInUp"
-			offset={300}
+			offset={150}
 			duration={1}
 			animateOnce
 		>
-			<section className="flex items-center w-full my-14 sm:my-20 ">
+			<section className="flex items-center w-full my-28 ">
 				<div className="flex items-center justify-between w-full l-container ">
-					<div className="">
-						<h3 className="mb-4 text-4xl font-medium">
+					<div className="w-full">
+						<h3 className="mb-4 text-4xl font-medium text-center sm:text-right">
 							سیگنال های معاملاتی
 						</h3>
-						<p className="max-w-lg">
+						<p className="max-w-lg mx-auto text-center sm:text-right sm:m-0 sm:mb-4">
 							تیم Level Up مجموعه‌ای از متخصصین با تجربه در حوزه‌
 							مالی، سرمایه گذاری و تکنولوژی است که در تلاش‌اند تا
 							با ترکیب تکنولوژی و علم مالی،‌ راهکارهایی ساده،
@@ -28,7 +28,10 @@ const Introduce = () => {
 							دیجیتال فعالیت نمایند.‌
 						</p>
 						<Link href={routes.login.path}>
-							<LuButton LuType="primary" className="mt-4">
+							<LuButton
+								LuType="primary"
+								className="mx-auto mt-4 sm:m-0"
+							>
 								ورود به پنل کاربری
 							</LuButton>
 						</Link>

@@ -67,25 +67,29 @@ const WhyLevelUp: FC = () => {
 						</p>
 					</div>
 					<div className="mt-10">
-						<LuTab
-							centered
-							activeKey={activeIndex}
-							onChange={handleTabChange}
-							tabs={fakeData.map((item, index) => ({
-								title: item.tabName,
-								key: index,
-							}))}
-						/>
+						<div className="hidden md:block">
+							<LuTab
+								centered
+								activeKey={activeIndex}
+								onChange={handleTabChange}
+								tabs={fakeData.map((item, index) => ({
+									title: item.tabName,
+									key: index,
+								}))}
+							/>
+						</div>
 						<div className="max-w-5xl mx-auto mt-10">
 							<Slide
 								indicators={false}
 								ref={slideRef}
-								autoplay={false}
+								autoplay={true}
 								transitionDuration={300}
 								infinite
 								onChange={(_from, to) => setActiveIndex(to)}
 								easing="ease-out"
 								arrows={false}
+								pauseOnHover
+								duration={5000}
 							>
 								{fakeData.map((item, index) => (
 									<WhyUsSlide

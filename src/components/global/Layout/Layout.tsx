@@ -10,7 +10,7 @@ const Layout: FC<ILayout> = ({ children }) => {
 	return (
 		<>
 			<Navbar />
-			<main className="overflow-hidden">{children}</main>
+			<main className="mt-20 overflow-hidden">{children}</main>
 			<Footer />
 		</>
 	);

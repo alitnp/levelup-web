@@ -13,7 +13,7 @@ const Register: FC<IRegister> = ({}) => {
 			<LoginRegisterWrapper>
 				<form className="w-3/4 mx-auto">
 					<h1 className="pb-2 mb-6 text-xl font-bold text-center border-b border-l-border-color-base">
-						ورود به حساب
+						ایجاد حساب کاربری
 					</h1>
 					<div className="mb-2">
 						<label
