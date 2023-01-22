@@ -38,7 +38,7 @@ const LuParticles: FC<ILuParticles> = ({
 				fullScreen: false,
 				background: {
 					color: {
-						value: "#0d3674",
+						value: "#0369a1",
 					},
 				},
 				fpsLimit: 120,

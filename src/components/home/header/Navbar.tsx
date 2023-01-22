@@ -1,4 +1,3 @@
-import LuButton from "@/components/global/LuButton/LuButton";
 import { luLogo } from "@/constants/icons";
 import routes from "@/constants/routes";
 import useScroll from "@/utils/hooks/useScroll";
@@ -11,8 +10,8 @@ import { Drawer } from "antd";
 const navbarItems = [
 	{ title: "صفحه اصلی", href: routes.home.path },
 	{ title: "مقاله ها", href: routes.articles.path },
-	{ title: "درباره ما", href: routes.home.path },
-	{ title: "ارتباط با ما", href: routes.home.path },
+	{ title: "درباره ما", href: routes.aboutus.path },
+	{ title: "ارتباط با ما", href: routes.contactus.path },
 ];
 
 const Navbar: FC = () => {

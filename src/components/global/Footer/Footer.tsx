@@ -1,3 +1,5 @@
+import routes from "@/constants/routes";
+import Link from "next/link";
 import { FC, ReactNode } from "react";
 import {
 	AiOutlineWhatsApp,
@@ -55,21 +57,31 @@ const Footer: FC<IFooter> = ({}) => {
 						<span className="mb-2 text-xl font-medium">
 							دسترسی سریع
 						</span>
-						<span className="text-sm cursor-pointer hover:underline">
-							ورود به حساب کاربری
-						</span>
-						<span className="text-sm cursor-pointer hover:underline">
-							ایجاد حساب کاربری
-						</span>
-						<span className="text-sm cursor-pointer hover:underline">
-							مطالب
-						</span>
-						<span className="text-sm cursor-pointer hover:underline">
-							درباره ما
-						</span>
-						<span className="text-sm cursor-pointer hover:underline">
-							ارتباط با ما
-						</span>
+						<Link href={routes.login.path}>
+							<span className="text-sm cursor-pointer hover:underline">
+								ورود به حساب کاربری
+							</span>
+						</Link>
+						<Link href={routes.register.path}>
+							<span className="text-sm cursor-pointer hover:underline">
+								ایجاد حساب کاربری
+							</span>
+						</Link>
+						<Link href={routes.articles.path}>
+							<span className="text-sm cursor-pointer hover:underline">
+								مطالب
+							</span>
+						</Link>
+						<Link href={routes.aboutus.path}>
+							<span className="text-sm cursor-pointer hover:underline">
+								درباره ما
+							</span>
+						</Link>
+						<Link href={routes.contactus.path}>
+							<span className="text-sm cursor-pointer hover:underline">
+								ارتباط با ما
+							</span>
+						</Link>
 					</div>
 					<div className="flex flex-col">
 						<span className="mb-2 text-xl font-medium">
