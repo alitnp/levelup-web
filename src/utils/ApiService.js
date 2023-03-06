@@ -1,10 +1,17 @@
+import endpoints from "@/constants/endpoints";
 import axios from "axios";
 import cookie from "js-cookie";
 import { trackPromise } from "react-promise-tracker";
 
 // urls
-export const BASE_URL =
-	process.env.REACT_APP_DEVELOPMENT_BASE_URL;
+export const BASE_URL = endpoints.baseUrl;
+
+//imagesrep.tipax.ir/
+// export const IMAGESREP =
+//   (process.env.REACT_APP_NOD_ENV === 'development' && process.env.REACT_APP_DEVELOPMENT_DOMAIN) ||
+//   (process.env.REACT_APP_NOD_ENV === 'local' && process.env.REACT_APP_LOCAL_DOMAIN) ||
+//   (process.env.REACT_APP_NOD_ENV === 'staging' && process.env.REACT_APP_STAGING_DOMAIN) ||
+//   (process.env.REACT_APP_NOD_ENV === 'production' && process.env.REACT_APP_PRODUCTION_DOMAIN);
 
 export let errorResponse = {};
 
@@ -45,7 +52,7 @@ export class ApiService {
 		this.controller = new AbortController();
 		this.session = axios.create(defaultOptions);
 		this.session.interceptors.request.use((config) => {
-			const getToken = cookie.get("sessionid");
+			const getToken = cookie.get("token");
 			config.headers["Authorization"] = getToken;
 			config.params = Object.assign({}, config.params || {});
 

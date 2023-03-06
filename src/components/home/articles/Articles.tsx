@@ -1,7 +1,16 @@
 import LuTab from "@/components/global/LuTab/LuTab";
 import Image from "next/image";
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { BsArrowLeftCircle } from "react-icons/bs";
+import ApiService from "@/utils/ApiService";
+import endpoints from "@/constants/endpoints";
+import {
+	backendResponse,
+	content,
+} from "@/constants/models";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/redux/reduxStore";
+import { getAllContentTypes } from "@/redux/middlewares/getAllContentTypes";
 
 const fakeCategories = [
 	{
@@ -71,31 +80,57 @@ const fakeCategories = [
 
 const Articles: FC = () => {
 	//states
+	const contentTypes = useSelector(
+		(state: RootState) => state.contentType
+	);
 	const [activeCategoryIndex, setActiveCategoryIndex] =
-		useState<number>(0);
+		useState<number>();
+	const [contents, setContents] = useState<content[]>();
+	console.log(contentTypes);
+	//hooks
+	const dispatch: AppDispatch = useDispatch();
+
+	//effect
+	useEffect(() => {
+		contentTypes.list.length > 0 && getContents();
+		contentTypes.list.length === 0 &&
+			dispatch(getAllContentTypes());
+	}, [activeCategoryIndex]);
+
+	//functions
+	const getContents = async () => {
+		await ApiService.post(endpoints.getContentsList, {
+			recordsPerPage: 4,
+			contentTypeId:
+				contentTypes.list[activeCategoryIndex || 0].id,
+		})
+			.then((res: backendResponse<content[]>) => {
+				if (res.isSuccess) setContents(res.data);
+			})
+			.catch(() => {});
+	};
 
 	return (
 		<section className="mb-6">
 			<div className="pt-12 pb-10 l-container">
 				<LuTab
-					tabs={fakeCategories.map((item, index) => ({
-						title: item.title,
+					tabs={contentTypes.list.map((type, index) => ({
+						title: type.title,
 						key: index,
 					}))}
 					activeKey={activeCategoryIndex}
 					onChange={setActiveCategoryIndex}
 				/>
 				<div className="grid justify-between grid-cols-1 gap-4 pt-6 sm:grid-cols-2 lg:flex sm:gap-10">
-					{fakeCategories[activeCategoryIndex].articles.map(
-						(article, index) => {
-							if (index > 3) return null;
+					{contents &&
+						contents.map((content, index) => {
 							return (
 								<div
 									key={index}
 									className="relative w-full overflow-hidden rounded-lg h-80"
 								>
 									<Image
-										src={article.imageUrl}
+										src={content.thumbnailUrl}
 										fill
 										alt=""
 										style={{ objectFit: "cover" }}
@@ -103,9 +138,9 @@ const Articles: FC = () => {
 									{index !== 3 && (
 										<div className="absolute top-0 left-0 flex flex-col items-end justify-end w-full h-full px-2 py-4 cursor-pointer bg-slate-800/60 group">
 											<p className="text-lg font-bold text-center text-l-opposite-text-color md:text-right">
-												{article.title.length < 55
-													? article.title
-													: article.title.substring(0, 55) + "..."}
+												{content.title.length < 55
+													? content.title
+													: content.title.substring(0, 55) + "..."}
 											</p>
 											<div className="pt-2 overflow-hidden transition-all duration-1000 ease-in-out max-h-0 group-hover:max-h-20">
 												<p className="px-4 py-1 text-sm text-l-opposite-text-color">
@@ -126,8 +161,7 @@ const Articles: FC = () => {
 									)}
 								</div>
 							);
-						}
-					)}
+						})}
 				</div>
 			</div>
 		</section>

@@ -1,9 +1,18 @@
 import Layout from "@/components/global/Layout/Layout";
-import { FC, useState } from "react";
-import { Tabs, TabsProps } from "antd";
+import { FC, useState, useEffect } from "react";
+import { TabsProps } from "antd";
 import LuTab from "@/components/global/LuTab/LuTab";
 import ArticleItem from "@/components/articles/ArticleItem";
 import Head from "next/head";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/redux/reduxStore";
+import { getAllContentTypes } from "@/redux/middlewares/getAllContentTypes";
+import ApiService from "@/utils/ApiService";
+import endpoints from "@/constants/endpoints";
+import {
+	backendResponse,
+	content,
+} from "@/constants/models";
 
 interface IArticles {}
 type category = { title: string; articles: article[] };
@@ -134,6 +143,30 @@ const Articles: FC<IArticles> = ({}) => {
 	const [activeIndex, setActiveIndex] = useState<
 		number | undefined
 	>();
+	const [contents, setContents] =
+		useState<backendResponse<content[]>>();
+	const contentTypes = useSelector(
+		(state: RootState) => state.contentType
+	);
+
+	//hooks
+	const dispatch: AppDispatch = useDispatch();
+
+	//effect
+	useEffect(() => {
+		contentTypes.length === 0 &&
+			dispatch(getAllContentTypes());
+		getContents();
+	}, []);
+
+	//functions
+	const getContents = async () => {
+		await ApiService.post(endpoints.getContentsList, {})
+			.then((res: backendResponse<content[]>) => {
+				if (res.isSuccess) setContents(res);
+			})
+			.catch(() => {});
+	};
 
 	return (
 		<>
@@ -156,16 +189,10 @@ const Articles: FC<IArticles> = ({}) => {
 							]}
 						/>
 						<div className="flex flex-col gap-6 pt-4">
-							{fakeCategories.map((cat, catIndex) =>
-								cat.articles.map((article, artIndex) => (
-									<ArticleItem
-										key={catIndex + artIndex}
-										creationDate="۱۴۰۱/۱۰/۱۰"
-										type={cat.title}
-										{...article}
-									/>
-								))
-							)}
+							{contents &&
+								contents.data.map((content) => (
+									<ArticleItem content={content} key={content.id} />
+								))}
 						</div>
 					</div>
 				</div>
