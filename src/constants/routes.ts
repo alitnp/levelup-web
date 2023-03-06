@@ -4,6 +4,8 @@ const routes = {
 	register: { path: "/register", isPrivate: false },
 	forgot: { path: "/forgot", isPrivate: false },
 	articles: { path: "/articles", isPrivate: false },
+	aboutus: { path: "/about", isPrivate: false },
+	contactus: { path: "/contact", isPrivate: false },
 };
 
 export default routes;
