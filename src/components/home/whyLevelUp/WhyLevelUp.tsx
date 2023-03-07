@@ -27,12 +27,12 @@ const fakeData = [
 			"با Level Up تریدر ارزسنج نیازی به تحلیل ندارید. فقط تصمیم گیرنده باش که آیا بخرید یا نه. فارغ از اینکه نیاز به تحلیل زمان خرید و فروش داشته باشید.",
 		imageUrl: "/images/security-compliance-slide.png",
 	},
-	{
-		tabName: "تنظیمات",
-		title: "تنظیمات",
-		desc: "شب شسب شسیب شسیب شسیب ",
-		imageUrl: "/images/highly-configurable-slide.png",
-	},
+	// {
+	// 	tabName: "تنظیمات",
+	// 	title: "تنظیمات",
+	// 	desc: "شب شسب شسیب شسیب شسیب ",
+	// 	imageUrl: "/images/highly-configurable-slide.png",
+	// },
 ];
 
 const WhyLevelUp: FC = () => {

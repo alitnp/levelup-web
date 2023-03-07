@@ -1,3 +1,4 @@
+import DlMobileApp from "@/components/global/DlMobileApp/DlMobileApp";
 import LuButton from "@/components/global/LuButton/LuButton";
 import routes from "@/constants/routes";
 import Image from "next/image";
@@ -27,14 +28,7 @@ const Introduce = () => {
 							حوزه سرمایه گذاری و کسب‌وکار در زمینه‌های متنوع ارز
 							دیجیتال فعالیت نمایند.‌
 						</p>
-						<Link href={routes.login.path}>
-							<LuButton
-								LuType="primary"
-								className="mx-auto mt-4 sm:m-0"
-							>
-								ورود به پنل کاربری
-							</LuButton>
-						</Link>
+						<DlMobileApp />
 					</div>
 					<div className="hidden sm:block">
 						<Image

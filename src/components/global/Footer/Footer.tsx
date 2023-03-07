@@ -1,3 +1,4 @@
+import DlMobileApp from "@/components/global/DlMobileApp/DlMobileApp";
 import routes from "@/constants/routes";
 import Link from "next/link";
 import { FC, ReactNode } from "react";
@@ -52,21 +53,14 @@ const Footer: FC<IFooter> = ({}) => {
 								</span>
 							</div>
 						</address>
+						<div className="mt-2">
+							<DlMobileApp />
+						</div>
 					</div>
 					<div className="flex flex-col">
 						<span className="mb-2 text-xl font-medium">
 							دسترسی سریع
 						</span>
-						<Link href={routes.login.path}>
-							<span className="text-sm cursor-pointer hover:underline">
-								ورود به حساب کاربری
-							</span>
-						</Link>
-						<Link href={routes.register.path}>
-							<span className="text-sm cursor-pointer hover:underline">
-								ایجاد حساب کاربری
-							</span>
-						</Link>
 						<Link href={routes.articles.path}>
 							<span className="text-sm cursor-pointer hover:underline">
 								مطالب

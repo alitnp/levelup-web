@@ -3,9 +3,9 @@ import routes from "@/constants/routes";
 import useScroll from "@/utils/hooks/useScroll";
 import Link from "next/link";
 import React, { FC, useState, useEffect } from "react";
-import { RiUserLine } from "react-icons/ri";
 import { HiMenu } from "react-icons/hi";
 import { Drawer } from "antd";
+import DlMobileApp from "@/components/global/DlMobileApp/DlMobileApp";
 
 const navbarItems = [
 	{ title: "صفحه اصلی", href: routes.home.path },
@@ -70,14 +70,7 @@ const Navbar: FC = () => {
 							{luLogo("60", "30")}
 						</Link>
 					</div>
-					<Link href={routes.login.path}>
-						<button className="flex justify-center sm:min-w-[100px] items-center sm:px-4 sm:py-[6px] border rounded-full p-3 bg-l-secondary-color text-l-opposite-text-color   sm:rounded-md gap-x-1  hover:border-l-primary-color">
-							<RiUserLine />
-							<span className="hidden sm:inline">
-								ورود به حساب
-							</span>
-						</button>
-					</Link>
+					<DlMobileApp />
 				</div>
 			</div>
 			<Drawer
