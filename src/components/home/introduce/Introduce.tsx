@@ -1,4 +1,5 @@
 import DlMobileApp from "@/components/global/DlMobileApp/DlMobileApp";
+import DlMobileAppBtn from "@/components/global/DlMobileApp/DlMobileAppBtn";
 import LuButton from "@/components/global/LuButton/LuButton";
 import routes from "@/constants/routes";
 import Image from "next/image";
@@ -28,7 +29,7 @@ const Introduce = () => {
 							حوزه سرمایه گذاری و کسب‌وکار در زمینه‌های متنوع ارز
 							دیجیتال فعالیت نمایند.‌
 						</p>
-						<DlMobileApp />
+						<DlMobileAppBtn />
 					</div>
 					<div className="hidden sm:block">
 						<Image

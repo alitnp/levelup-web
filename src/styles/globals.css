@@ -128,3 +128,9 @@ a {
         margin: 0 auto;
     }
 }
+
+.ant-form div,
+.ant-form-item-label {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}

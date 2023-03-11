@@ -1,4 +1,5 @@
 import DlMobileApp from "@/components/global/DlMobileApp/DlMobileApp";
+import DlMobileAppBtn from "@/components/global/DlMobileApp/DlMobileAppBtn";
 import routes from "@/constants/routes";
 import Link from "next/link";
 import { FC, ReactNode } from "react";
@@ -54,7 +55,7 @@ const Footer: FC<IFooter> = ({}) => {
 							</div>
 						</address>
 						<div className="mt-2">
-							<DlMobileApp />
+							<DlMobileAppBtn />
 						</div>
 					</div>
 					<div className="flex flex-col">
