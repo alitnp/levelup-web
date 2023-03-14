@@ -35,6 +35,12 @@ export type content = {
 	];
 };
 
+export type user = {
+	mobileNumber: string;
+	fullName: string;
+	id: number;
+};
+
 export interface backendResponse<T> {
 	data: T;
 	isSuccess: boolean;

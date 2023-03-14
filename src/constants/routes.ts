@@ -6,6 +6,10 @@ const routes = {
 	articles: { path: "/articles", isPrivate: false },
 	aboutus: { path: "/about", isPrivate: false },
 	contactus: { path: "/contact", isPrivate: false },
+	registerSuccess: {
+		path: "/registersuccess",
+		isPrivate: false,
+	},
 };
 
 export default routes;
