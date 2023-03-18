@@ -34,7 +34,9 @@ const ArticleItem: FC<IArticleItem> = ({ content }) => {
 					</h1>
 				</Link>
 				<p className="m-0 text-sm max-w-[100ch] text-center  md:text-right mx-auto md:m-0">
-					{content.description.slice(0, 400)}
+					{content.description
+						? content.description.slice(0, 400)
+						: ""}
 				</p>
 			</div>
 		</article>

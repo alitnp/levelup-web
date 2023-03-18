@@ -34,7 +34,7 @@ const About: FC<IAbout> = ({}) => {
 						</div>
 						<div className="relative overflow-hidden rounded-lg ">
 							<Image
-								src="/images/about-levelup.webp"
+								src="/images/about-levelup.png"
 								width={640}
 								height={480}
 								alt=""

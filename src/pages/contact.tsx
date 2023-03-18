@@ -39,7 +39,7 @@ const Contact: FC<IContact> = ({}) => {
 						</div>
 						<div className="relative overflow-hidden rounded-lg ">
 							<Image
-								src="/images/contact.webp"
+								src="/images/contact.png"
 								width={640}
 								height={640}
 								alt=""

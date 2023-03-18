@@ -33,7 +33,7 @@ const Introduce = () => {
 					</div>
 					<div className="hidden sm:block">
 						<Image
-							src="/images/feature2.webp"
+							src="/images/feature2.png"
 							width={500}
 							height={500}
 							alt=""

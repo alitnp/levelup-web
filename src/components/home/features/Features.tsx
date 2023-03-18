@@ -17,7 +17,7 @@ const features: feature[] = [
 						هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در
 						شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
 						متخصصان را می طلبد.`,
-		image: "/images/referral.webp",
+		image: "/images/referral.png",
 	},
 	{
 		title: "بازگشت اعتبار در صورت زیان",
@@ -28,7 +28,7 @@ const features: feature[] = [
 						هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در
 						شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
 						متخصصان را می طلبد.`,
-		image: "/images/detect-lost.webp",
+		image: "/images/detect-lost.png",
 	},
 ];
 
