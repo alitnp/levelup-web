@@ -16,12 +16,9 @@ import endpoints from "@/constants/endpoints";
 export const renderParagraph = (
 	block: richTextblock<richTextParagraphData>
 ): ReactNode => {
-	const alignment = block.tunes.textAlignment.alignment;
 	return (
 		<p
-			className={`${alignment === "center" && "text-center"} ${
-				alignment === "left" && "text-left"
-			} pb-2`}
+			className="pb-2 "
 			dangerouslySetInnerHTML={{ __html: block.data.text }}
 		></p>
 	);
@@ -29,14 +26,11 @@ export const renderParagraph = (
 export const renderHeading = (
 	block: richTextblock<richTextHeaderData>
 ): ReactNode => {
-	const alignment = block.tunes.textAlignment.alignment;
 	const CustomTag =
 		`h${block.data.level}` as keyof JSX.IntrinsicElements;
 	return (
 		<CustomTag
-			className={`${alignment === "center" && "text-center"} ${
-				alignment === "left" && "text-left"
-			} pb-2 pt-4`}
+			className="pt-4 pb-2"
 			dangerouslySetInnerHTML={{ __html: block.data.text }}
 		></CustomTag>
 	);
