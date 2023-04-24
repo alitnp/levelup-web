@@ -9,14 +9,23 @@ import {
 	AiFillFacebook,
 	AiOutlineInstagram,
 } from "react-icons/ai";
+import { BsTelegram } from "react-icons/bs";
 
 interface IFooter {}
 
 const Footer: FC<IFooter> = ({}) => {
-	const getSocialElement = (icon: ReactNode): ReactNode => (
-		<div className="p-1 border rounded-md cursor-pointer hover:bg-l-opposite-text-color border-l-border-color-base hover:text-l-text-color no-transition-effect">
+	const getSocialElement = (
+		icon: ReactNode,
+		url: string
+	): ReactNode => (
+		<a
+			href={url}
+			target="_blank"
+			rel="noreferrer"
+			className="p-1 border rounded-md cursor-pointer hover:bg-l-opposite-text-color border-l-border-color-base hover:text-l-text-color no-transition-effect"
+		>
 			{icon}
-		</div>
+		</a>
 	);
 
 	return (
@@ -34,25 +43,25 @@ const Footer: FC<IFooter> = ({}) => {
 						</p>
 						<address className="not-italic font-normal">
 							<div>
-								تماس:
+								شماره واتساپ:
 								<span itemProp="telephone" className="mr-4">
-									<a href="tel:02134567879">۳۴۵ ۶۷۸ ۹۹ - ۰۲۱</a>
+									<a href="tel:‌09961977020">‌09961977020</a>
 								</span>
 							</div>
 							<div>
 								ایمیل:
 								<span itemProp="mail" className="mr-4">
-									<a href="mailto:info@levelup.com">
-										info@levelup.com
+									<a href="mailto:support@levelupfx724.com">
+										support@levelupfx724.com
 									</a>
 								</span>
 							</div>
-							<div>
+							{/* <div>
 								آدرس:
 								<span className="mr-4">
 									میدان ونک - خیابان ولیعصر
 								</span>
-							</div>
+							</div> */}
 						</address>
 						<div className="mt-2">
 							<DlMobileAppBtn />
@@ -83,10 +92,14 @@ const Footer: FC<IFooter> = ({}) => {
 							شبکه های اجتماعی
 						</span>
 						<div className="flex gap-4 mt-2">
-							{getSocialElement(<AiOutlineInstagram />)}
-							{getSocialElement(<AiFillFacebook />)}
-							{getSocialElement(<AiOutlineTwitter />)}
-							{getSocialElement(<AiOutlineWhatsApp />)}
+							{getSocialElement(
+								<AiOutlineInstagram />,
+								"https://instagram.com/levelupfx724"
+							)}
+							{getSocialElement(
+								<BsTelegram />,
+								"https://t.me/levelupfx724"
+							)}
 						</div>
 					</div>
 				</div>

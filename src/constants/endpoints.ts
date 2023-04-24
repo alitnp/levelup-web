@@ -1,7 +1,8 @@
 const endpoints = {
 	// baseUrl: "http://Apitest.levelupfx724.com/api/",
-	baseUrl: "http://146.19.212.83:1161/api/",
-	baseImageUrl: "",
+	baseUrl: "http://luapi.levelupfx724.com/api/",
+	baseImageUrl:
+		"http://luapi.levelupfx724.com/uploads/contents/",
 
 	//content
 	getContentsList: "/Contents/Search",

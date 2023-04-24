@@ -20,7 +20,7 @@ const LuTab: FC<ILuTab> = ({
 }) => {
 	return (
 		<div
-			className={`flex flex-col sm:flex-row w-full border-b border-l-border-color-base gap-x-2 text-center sm:text-right ${
+			className={`flex flex-col sm:flex-row w-full border-b mt-6 border-l-border-color-base gap-x-2 text-center sm:text-right ${
 				centered && "justify-center"
 			}`}
 		>

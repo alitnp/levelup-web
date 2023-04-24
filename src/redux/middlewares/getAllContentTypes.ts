@@ -11,7 +11,13 @@ export const getAllContentTypes =
 	() => async (dispatch: AppDispatch) => {
 		await ApiService.post(endpoints.getContentTypesList, {})
 			.then((res: backendResponse<contentType[]>) => {
-				if (res.isSuccess) dispatch(setContentTypes(res.data));
+				if (res.isSuccess)
+					dispatch(
+						setContentTypes([
+							{ id: 0, title: "همه" },
+							...res.data,
+						])
+					);
 			})
 			.catch(() => {});
 	};

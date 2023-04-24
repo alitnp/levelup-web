@@ -19,7 +19,7 @@ const Articles: FC = () => {
 	const [activeCategoryIndex, setActiveCategoryIndex] =
 		useState<number | undefined>(0);
 	const [contents, setContents] = useState<content[]>();
-	console.log(contentTypes);
+
 	//hooks
 	const dispatch: AppDispatch = useDispatch();
 
@@ -35,15 +35,20 @@ const Articles: FC = () => {
 
 	//functions
 	const getContents = async () => {
-		await ApiService.post(endpoints.getContentsList, {
+		const payload: Record<string, any> = {
 			recordsPerPage: 4,
-			contentTypeId:
-				contentTypes.list[activeCategoryIndex || 0].id,
-		})
+			isFeatured: true,
+		};
+		if (activeCategoryIndex !== 0)
+			payload.contentTypeId =
+				contentTypes.list[activeCategoryIndex || 0].id;
+
+		await ApiService.post(endpoints.getContentsList, payload)
 			.then((res: backendResponse<content[]>) => {
 				if (res.isSuccess) setContents(res.data);
+				else setContents(undefined);
 			})
-			.catch(() => {});
+			.catch(() => setContents(undefined));
 	};
 
 	return (

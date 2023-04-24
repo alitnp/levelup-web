@@ -16,24 +16,32 @@ const Contact: FC<IContact> = ({}) => {
 							</h1>
 							<address className="not-italic font-normal text-center lg:text-right">
 								<div>
-									تماس:
+									شماره واتساپ:
 									<span itemProp="telephone" className="mr-4">
-										<a href="tel:02134567879">۳۴۵ ۶۷۸ ۹۹ - ۰۲۱</a>
+										<a href="tel:‌09961977020">‌09961977020</a>
 									</span>
 								</div>
 								<div>
 									ایمیل:
 									<span itemProp="mail" className="mr-4">
-										<a href="mailto:info@levelup.com">
-											info@levelup.com
+										<a href="mailto:support@levelupfx724.com">
+											support@levelupfx724.com
 										</a>
 									</span>
 								</div>
-								<div>
+								{/* <div>
 									آدرس:
 									<span className="mr-4">
 										میدان ونک - خیابان ولیعصر
 									</span>
+								</div> */}
+								<div>
+									اینستاگرام:
+									<span className="mr-4">@levelupfx724</span>
+								</div>
+								<div>
+									تلگرام:
+									<span className="mr-4">@levelupfx724</span>
 								</div>
 							</address>
 						</div>

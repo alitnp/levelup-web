@@ -1,5 +1,5 @@
 import Layout from "@/components/global/Layout/Layout";
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, useMemo } from "react";
 import LuTab from "@/components/global/LuTab/LuTab";
 import ArticleItem from "@/components/articles/ArticleItem";
 import Head from "next/head";
@@ -33,8 +33,6 @@ const Articles: FC = () => {
 	const dispatch: AppDispatch = useDispatch();
 	const { isReady, push, asPath } = useRouter();
 
-	const router = useRouter();
-
 	//effect
 	useEffect(() => {
 		contentTypes.list.length === 0 &&
@@ -57,14 +55,16 @@ const Articles: FC = () => {
 		contentTypeId: string | undefined = undefined,
 		pageNumber: number = 1
 	) => {
-		await ApiService.post(endpoints.getContentsList, {
-			contentTypeId,
-			pageNumber,
-		})
+		const payload: Record<string, any> = { pageNumber };
+		if (contentTypeId === "0" || !contentTypeId )
+			payload.isFeatured = true;
+		else payload.contentTypeId = contentTypeId;
+		await ApiService.post(endpoints.getContentsList, payload)
 			.then((res: backendResponse<content[]>) => {
 				if (res.isSuccess) setContents(res);
+				else setContents(undefined);
 			})
-			.catch(() => {});
+			.catch(() => setContents(undefined));
 	};
 	const handlePagination = (pageNumber: number) => {
 		const query = queryString.parseUrl(asPath).query;
@@ -72,6 +72,33 @@ const Articles: FC = () => {
 			query: { ...query, pageNumber },
 		});
 	};
+	const tabs = useMemo(
+		() =>
+			contentTypes.list.map((item) => ({
+				title: item.title,
+				key: item.id,
+			})),
+		[contentTypes]
+	);
+	const articles = useMemo(() => {
+		if (!contents)
+			return (
+				<div className="flex items-center justify-center w-full py-10 border border-dashed">
+					محتوایی موجود نیست
+				</div>
+			);
+		return contents.data.map((content) => (
+			<ArticleItem
+				id={content.id}
+				creationDate={content.creationDate}
+				creationTime={content.creationTime}
+				description={content.description}
+				title={content.title}
+				thumbnailUrl={content.thumbnailUrl}
+				key={content.id}
+			/>
+		));
+	}, [contents]);
 
 	return (
 		<>
@@ -83,27 +110,16 @@ const Articles: FC = () => {
 					<div className="pt-10 l-container">
 						<LuTab
 							centered
-							activeKey={
-								contentTypeId ? +contentTypeId : undefined
-							}
+							activeKey={contentTypeId ? +contentTypeId : 0}
 							onChange={(e) =>
 								push(routes.articles.path, {
 									query: { contentTypeId: e },
 								})
 							}
-							tabs={[
-								{ title: "همه", key: undefined },
-								...contentTypes.list.map((item) => ({
-									title: item.title,
-									key: item.id,
-								})),
-							]}
+							tabs={tabs}
 						/>
 						<div className="flex flex-col gap-6 pt-4">
-							{contents &&
-								contents.data.map((content) => (
-									<ArticleItem content={content} key={content.id} />
-								))}
+							{articles}
 						</div>
 					</div>
 				</div>

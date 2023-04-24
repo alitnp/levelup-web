@@ -38,11 +38,11 @@ const ArticleDetail: FC = () => {
 
 	//functions
 	const getOtherContents = async () => {
-		await ApiService.post(endpoints.getContentsList, {}).then(
-			(res: backendResponse<content[]>) => {
-				if (res.isSuccess) setOtherContents(res);
-			}
-		);
+		await ApiService.post(endpoints.getContentsList, {
+			isFeatured: true,
+		}).then((res: backendResponse<content[]>) => {
+			if (res.isSuccess) setOtherContents(res);
+		});
 	};
 	const getContent = async (id: number) => {
 		await ApiService.post(endpoints.getContentsList, {

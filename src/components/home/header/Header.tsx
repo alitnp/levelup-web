@@ -10,7 +10,7 @@ const Header: FC = () => {
 					level.UP
 				</h1>
 				<h3 className="text-lg text-center sm:text-xl">
-					بستر تخصصی اشتراک گذاری سیگنال های معاملاتی
+					اولین استارت آپ تخصصی بازارهای مالی بین المللی
 				</h3>
 			</div>
 		</header>

@@ -19,7 +19,7 @@ const LoginRegisterWrapper: FC<ILoginRegisterWrapper> = ({
 								level.UP
 							</h1>
 							<h3 className="text-sm text-center sm:text-base">
-								بستر تخصصی اشتراک گذاری سیگنال های معاملاتی
+						اولین استارت آپ تخصصی بازارهای مالی بین المللی
 							</h3>
 						</div>
 					</div>
